@@ -15,6 +15,7 @@ class Regist_model extends CI_Model {
 					'password'=>$password,
 					'nama'=>$nama,
 					'email'=>$email,
+					'level' => 'pasien'
 			);
 	$this->db->insert('user', $data);
 	

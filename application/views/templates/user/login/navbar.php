@@ -18,7 +18,12 @@
 								<li><a href="<?php echo site_url() ?>/welcome/#feature">Info Penyakit</a></li>
 								<li><a href="<?php echo site_url() ?>/welcome/#tentang">Tentang</a></li>				
 								<li><a href="<?php echo site_url() ?>/welcome/#kontak">Kontak</a></li>
-								<li><a href="<?php echo site_url() ?>/login_user"><i class="fa fa-user"></i>   Login </a></li>
+								<?php if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
+								?>
+								<li><a href="<?php echo site_url() ?>/login_user/logout"><i class="fa fa-user"></i> Hai, <?php echo $this->session->userdata('nama') ?>,  Logout </a></li>
+								<?php } else{ ?>
+								<li><a href="<?php echo site_url() ?>/login_user"><i class="fa fa-user"></i> Login </a></li>
+								<?php } ?>
 						    </ul>
 						  </div>						
 					</div>

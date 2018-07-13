@@ -10,7 +10,7 @@ class Login_user extends CI_Controller {
 	
 	public function index()
 	{
-		// if($this->session->userdata('is_login') == FALSE){redirect('welcome');}
+		if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){redirect('welcome');}
 		$data['contentuser'] = 'user/login'; 
 		$this->load->view('templates/user/login/index', $data);
 	}
@@ -29,6 +29,8 @@ class Login_user extends CI_Controller {
 						'username' => $username,
 						'password' => $password,
 						'is_login' => TRUE,
+						'nama' => $check->nama,
+						'level' => $check->level
 				);
 				$this->session->set_userdata($data);
 				redirect('welcome');
@@ -39,9 +41,9 @@ class Login_user extends CI_Controller {
 
 	public function logout()
 	{
-		$data = array('username','password','is_login');
+		$data = array('username','password','is_login', 'nama', 'level');
 		$this->session->unset_userdata($data);
-		redirect('login_user');	
+		redirect('welcome');	
 	}
 
 }

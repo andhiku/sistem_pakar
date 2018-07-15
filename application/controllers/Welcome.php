@@ -11,14 +11,26 @@ class Welcome extends CI_Controller {
 	
 	public function admin()
 	{
-		$data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
-		$this->load->view('templates/admin/index', $data);
+		// $data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
+		$this->load->view('templates/login/index');
 	}
 
 	public function index()
 	{
 		$data['contentuser'] = 'user/home'; //nama file yang akan jadi kontent di template
 		$this->load->view('templates/user/home/index', $data);
+	}
+
+	public function diagnosa()
+	{
+		$data['contentuser'] = 'user/diagnosa'; //nama file yang akan jadi kontent di template
+		$this->load->view('templates/user/diagnosa/index', $data);
+	}
+
+	public function dashboard()
+	{
+		$data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
+		$this->load->view('templates/admin/index', $data);
 	}
 
 }

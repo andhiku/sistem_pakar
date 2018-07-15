@@ -13,11 +13,11 @@
 
 						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 						    <ul class="navbar-nav">
-								<li><a href="#home">Home</a></li>
+								<li><a href="<?php echo site_url() ?>/welcome"">Home</a></li>
 								<li><a href="<?php echo site_url() ?>/login_user">Diagnosa</a></li>
-								<li><a href="#feature">Info Penyakit</a></li>
-								<li><a href="#tentang">Tentang</a></li>				
-								<li><a href="#kontak">Kontak</a></li>
+								<li><a href="<?php echo site_url() ?>/welcome/#feature">Info Penyakit</a></li>
+								<li><a href="<?php echo site_url() ?>/welcome/#tentang">Tentang</a></li>				
+								<li><a href="<?php echo site_url() ?>/welcome/#kontak">Kontak</a></li>
 								<?php 
 								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
 								?>

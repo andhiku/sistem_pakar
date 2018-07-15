@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Login_user extends CI_Controller {
+class Login_admin extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
@@ -10,9 +10,9 @@ class Login_user extends CI_Controller {
 	
 	public function index()
 	{
-		if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){redirect('welcome/diagnosa');}
-		$data['contentuser'] = 'user/login'; 
-		$this->load->view('templates/user/home/index', $data);
+		if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'admin'){redirect('welcome/admin');}
+		// $data['contentuser'] = 'user/login'; 
+		$this->load->view('templates/login/index', $data);
 	}
 
 	public function login()
@@ -23,17 +23,17 @@ class Login_user extends CI_Controller {
 
 			$check = $this->Login_model->checkLogin($username, $password);
 			if (!$check) {
-				redirect('login_user');
+				redirect('welcome/admin');
 			}else{
 				$data = array(
 						'username' => $username,
 						'password' => $password,
 						'is_login' => TRUE,
-						'nama' => $check->nama,
+						// 'nama' => $check->nama,
 						'level' => $check->level
 				);
 				$this->session->set_userdata($data);
-				redirect('welcome/diagnosa');
+				redirect('welcome/dashboard');
 			}
 
 		}
@@ -41,9 +41,9 @@ class Login_user extends CI_Controller {
 
 	public function logout()
 	{
-		$data = array('username','password','is_login', 'nama', 'level');
+		$data = array('username','password','is_login', 'level');
 		$this->session->unset_userdata($data);
-		redirect('welcome');	
+		redirect('welcome/admin');	
 	}
 
 }

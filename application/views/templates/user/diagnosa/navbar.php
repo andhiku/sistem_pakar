@@ -1,5 +1,5 @@
 			<!-- start banner Area -->
-			
+			<section class="banner-area" id="home">
 			<!-- Start Header Area -->
 			<header class="default-header">
 				<nav class="navbar navbar-expand-lg  navbar-light">
@@ -13,12 +13,13 @@
 
 						  <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
 						    <ul class="navbar-nav">
-								<li><a href="<?php echo site_url() ?>/welcome">Home</a></li>
-								<li><a href="<?php echo site_url() ?>/login_user">Diagnosa</a></li>
+								<li><a href="<?php echo site_url() ?>/welcome"">Home</a></li>
+								<li><a href="<?php echo site_url() ?>/welcome/diagnosa">Diagnosa</a></li>
 								<li><a href="<?php echo site_url() ?>/welcome/#feature">Info Penyakit</a></li>
 								<li><a href="<?php echo site_url() ?>/welcome/#tentang">Tentang</a></li>				
 								<li><a href="<?php echo site_url() ?>/welcome/#kontak">Kontak</a></li>
-								<?php if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
+								<?php 
+								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
 								?>
 								<li><a href="<?php echo site_url() ?>/login_user/logout"><i class="fa fa-user"></i> Hai, <?php echo $this->session->userdata('nama') ?>,  Logout </a></li>
 								<?php } else{ ?>

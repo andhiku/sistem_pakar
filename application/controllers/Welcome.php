@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
 
 	public function diagnosa()
 	{
+		if($this->session->userdata('is_login') == FALSE){redirect('login_user');}
 		$data['contentuser'] = 'user/diagnosa'; //nama file yang akan jadi kontent di template
 		$this->load->view('templates/user/diagnosa/index', $data);
 	}

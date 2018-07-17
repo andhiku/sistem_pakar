@@ -12,7 +12,7 @@ class Login_admin extends CI_Controller {
 	{
 		if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'admin'){redirect('welcome/admin');}
 		// $data['contentuser'] = 'user/login'; 
-		$this->load->view('templates/login/index', $data);
+		$this->load->view('templates/login/index');
 	}
 
 	public function login()

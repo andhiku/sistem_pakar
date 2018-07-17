@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 
 	public function dashboard()
 	{
+		if($this->session->userdata('is_login') == FALSE){redirect('login_admin');}
 		$data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
 		$this->load->view('templates/admin/index', $data);
 	}

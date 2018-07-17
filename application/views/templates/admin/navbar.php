@@ -88,8 +88,9 @@
                         if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'admin'){
                      ?>
                        <li><a href="<?php echo site_url() ?>/login_admin/logout"><i class="fa fa-sign-out pull-right"></i> Logout </a></li>
+                    <?php }else{ ?>
+                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                     <?php } ?>
-                    <!-- <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li> -->
                   </ul>
                 </li>
               </ul>

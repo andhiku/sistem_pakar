@@ -8,10 +8,10 @@
 								<p class="mx-auto text-white  mt-20 mb-40">
 									Jagalah kesehatan bunda, karena pertumbuhan bayi tergantung pada kesehatan masa-masa hamil anda.
 								</p>
-								<a href="#" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<a href="<?php echo site_url() ?>/welcome/diagnosa"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding banner-right">
-							<img class="img-fluid" src="<?php echo base_url() ?>assets/templateuser/img/header-img.png" alt="">
+							<img class="img-fluid" style="width: 600px; height: 500px;" src="<?php echo base_url() ?>assets/templateuser/img/img_banner.png" alt="">
 						</div>
 					</div>
 				</div>
@@ -19,7 +19,7 @@
 			<!-- End banner Area -->	
 
 			<!-- Start cat Area -->
-			<section class="cat-area section-gap" id="service">
+			<!-- <section class="cat-area section-gap" id="service">
 				<div class="container">
 					<div class="row d-flex justify-content-center">
 						<div class="menu-content pb-60 col-lg-8">
@@ -50,7 +50,7 @@
 						</div>
 					</div>
 				</div>	
-			</section>
+			</section> -->
 			<!-- End cat Area -->
 			
 
@@ -94,7 +94,7 @@
 							<div class="col-lg-6  col-md-6 mb-30">
 								<div class="single-service" style="background-color: white;">
 									<img class="d-block mx-auto mb-30" src="<?php echo base_url() ?>assets/templateuser/img/f1.png" alt="">
-									<h4><a href="#">Expert Technicians</a></h4>								
+									<h4><a href="#">Kehamilan Ektropik Terganggu (KET)</a></h4>								
 								</div>
 							</div>
 							<div class="col-lg-6  col-md-6 mb-30">

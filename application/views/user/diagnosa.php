@@ -1,3 +1,6 @@
+<?php 
+if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
+?>
 <section id="kontak" class="call-to-action-area section-gap " style="background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #ffffff 100%) !important;" >
 	<div class="container">
 		<div class="row d-flex justify-content-center">
@@ -36,3 +39,4 @@
 		</div>						
 	</div>	
 </section>
+<?php } else{ redirect('login_user');}?>

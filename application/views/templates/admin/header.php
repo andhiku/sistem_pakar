@@ -27,6 +27,8 @@
 
     <!-- Custom Theme Style -->
     <link href="<?php echo base_url() ?>assets/build/css/custom.min.css" rel="stylesheet">
+
+     <link href="<?php echo base_url() ?>assets/build/css/style.css" rel="stylesheet">
   </head>
 
-  <body class="nav-md">
+  <body class="nav-md" style="background: #FFF">

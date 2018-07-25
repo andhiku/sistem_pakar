@@ -48,8 +48,21 @@
 										</div>
 									</div>
 									<br>
-									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #1ABB9C; border-color: #1ABB9C;">Update</button>
-									<a href="<?php echo site_url('/gejala/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
+									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Level : </span>
+										</div>
+										<div class="col-md-12">
+											<select name="level" class="form-control" style="font-size: 12px;" required="required">
+												<option value="">-Pilihan-</option>
+												<option value="pasien">pasien</option>
+												<option value="admin">admin</option>
+											</select>
+										</div>
+									</div>
+									<br>
+									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;">Update</button>
+									<a href="<?php echo site_url('/pengguna/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>
 						</div>	

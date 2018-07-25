@@ -16,7 +16,7 @@
 											<span>Kelompok Gejala : </span>
 										</div>
 										<div class="col-md-12">
-											<select name=kelompok_gejala_id class="form-control " style="font-size: 12px;">
+											<select name="kelompok_gejala_id" class="form-control " style="font-size: 12px;">
 												<option>-Pilih-</option>
 												<?php $kelompok_gejala = $this->Gejala_model->getlistkelompokgejala();
 
@@ -48,7 +48,7 @@
 										</div>
 									</div>
 									<br>
-									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #1ABB9C; border-color: #1ABB9C;">Simpan</button>
+									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #3EA8FF; border-color: #3EA8FF;">Simpan</button>
 									<a href="<?php echo site_url('/gejala/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>

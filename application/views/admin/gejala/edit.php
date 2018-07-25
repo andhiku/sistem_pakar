@@ -16,19 +16,21 @@
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span >Kelompok Gejala : </span>
 										</div>
-										<select name=kelompok_gejala_id class="form-control " style="font-size: 12px;">
-												<?php $kelompok_gejala = $this->Gejala_model->getlistkelompokgejala();
-
-												?>
-												<?php foreach ($kelompok_gejala->result() as $key){ ?>
-													<option value="<?php echo $key->id ?>"><?php echo $key->nama; ?></option>
-												<?php } ?> 
-											
-										</select>
-
 										<div class="col-md-12">
-											<input type="text" name="kelompok_gejala_id" class="form-control " style="font-size: 12px;" value="<?php echo $gejala['kelompok_gejala_id'] ?>" >
+											<select name="kelompok_gejala_id" class="form-control " style="font-size: 12px;">
+													<?php $kelompok_gejala = $this->Gejala_model->getlistkelompokgejala();
+
+													?>
+													<?php foreach ($kelompok_gejala->result() as $key){ ?>
+														<option value="<?php echo $key->id ?>"><?php echo $key->nama; ?></option>
+													<?php } ?> 
+												
+											</select>
 										</div>
+
+									<!-- 	<div class="col-md-12">
+											<input type="text" name="kelompok_gejala_id" class="form-control " style="font-size: 12px;" value="<?php echo $gejala['kelompok_gejala_id'] ?>" >
+										</div> -->
 										
 									</div>
 									<br>
@@ -50,7 +52,7 @@
 										</div>
 									</div>
 									<br>
-									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #1ABB9C; border-color: #1ABB9C;">Update</button>
+									<button type="submit" name="submit" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677b; border-color: #51677b;">Update</button>
 									<a href="<?php echo site_url('/gejala/index') ?>" class="btn btn-default btn-flat btn-sm" style="border-radius: 0px;">Batal</a>
 								</div>
 							</form>

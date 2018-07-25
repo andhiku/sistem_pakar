@@ -29,40 +29,38 @@
 <!--===============================================================================================-->
 </head>
 <body>
-	
+	<?php echo form_open('login_admin/login'); ?>
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-
-				<?php echo form_open('login_admin/login'); ?>
 				<section class="login100-form validate-form">
-					<span class="login100-form-title p-b-34">
+					<span class="login100-form-title p-b-34" style="font-family: arial">
 						Sistem Pakar Penyakit Ibu Hamil
 						<span style="text-align: center !important; font-size: 12px; text-transform: none;">Silahkan login untuk melanjutkan</span>
 					</span>
 					
 					
 					<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20" data-validate="Type user name">
-						<input id="first-name" class="input100" type="text" name="username" placeholder="Username">
-						<span class="focus-input100"></span>
+						<input id="first-name" class="input100" type="text" name="username" placeholder="Username" style="font-family: arial">
+						<span class="focus-input100" style="border-color: #3EA8FF"></span>
 					</div>
 					<div class="wrap-input100 rs2-wrap-input100 validate-input m-b-20" data-validate="Type password">
-						<input class="input100" type="password" name="password" placeholder="Password">
-						<span class="focus-input100"></span>
+						<input class="input100" type="password" name="password" placeholder="Password" style="font-family: arial">
+						<span class="focus-input100" style="border-color: #3EA8FF"></span>
 					</div>
 					
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn" name="submit">
+						<button class="login100-form-btn" name="submit" style="background: #3EA8FF; font-family: arial;" >
 							Masuk
 						</button>
 					</div>
 
-					<div class="w-full text-center p-t-27 p-b-239">
+					<div class="w-full text-center p-t-27 p-b-239" >
 						<span class="txt1">
 							Lupa
 						</span>
 
-						<a href="#" class="txt2">
+						<a href="#" class="txt2" style="color: #3EA8FF" style="font-family: arial">
 							Username / password?
 						</a>
 					</div>
@@ -71,7 +69,7 @@
 				<?php echo form_close(''); ?>
 
 
-				<div class="login100-more" style="background-image: url('<?php echo base_url() ?>assets/templatelogin/images/bg-01.jpg');"></div>
+				<div class="login100-more" style="background-image: url('<?php echo base_url() ?>assets/templatelogin/images/bg-02.jpg');"></div>
 			</div>
 		</div>
 	</div>

@@ -4,7 +4,7 @@
 			<h3>Daftar Nilai CF</h3>
 
 			<br>
-			<a href="<?php echo site_url('/nilai_cf/create') ?>" class="btn btn-primary" style="border-radius: 0px; font-size: 12px; background:#1ABB9C; border-color: #1ABB9C;"><i class="fa fa-plus-circle"></i> Tambah Nilai CF</a>
+			<a href="<?php echo site_url('/nilai_cf/create') ?>" class="btn btn-primary" style="border-radius: 0px; font-size: 12px; background:#3EA8FF; border-color: #3EA8FF;"><i class="fa fa-plus-circle"></i> Tambah Nilai CF</a>
 			<br><br>
 			<table class="table table-bordered">
 				<thead>
@@ -26,7 +26,7 @@
 						<td><?php echo $data['mb'] ?></td>
 						<td><?php echo $data['md'] ?></td>
 						<td style="text-align: center; width: 200px;">
-							<a href="<?php echo site_url('/nilai_cf/edit/').$data['gpid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #1ABB9C; border-color: #1ABB9C;"><i class="fa fa-edit"></i> Edit</a>
+							<a href="<?php echo site_url('/nilai_cf/edit/').$data['gpid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background: #51677B; border-color: #51677B;"><i class="fa fa-edit"></i> Edit</a>
 							<a href="<?php echo site_url('/nilai_cf/hapus/').$data['gpid'] ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i> Hapus</a>
 						</td>
 					</tr>

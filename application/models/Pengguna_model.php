@@ -9,15 +9,17 @@ class Pengguna_model extends CI_Model {
 	
 	public function insert(){
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
+		$level = $this->input->post('level');
 	
 	$data = array(
 					'username'=>$username,
 					'password'=>$password,
 					'nama'=>$nama,
 					'email'=>$email,
+					'level'=>$level,
 			);
 	$this->db->insert('user', $data);
 	
@@ -31,15 +33,17 @@ class Pengguna_model extends CI_Model {
 	public function edit(){
 		$id = $this->input->post('id');
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+		$password = md5($this->input->post('password'));
 		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
+		$level = $this->input->post('level');
 
 		$data = array(
 					'username'=>$username,
 					'password'=>$password,
 					'nama'=>$nama,
 					'email'=>$email,
+					'level'=>$level,
 		);
 		$this->db->where('id',$id);
 		$this->db->update('user', $data);

@@ -10,7 +10,7 @@ class Gejala_model extends CI_Model {
 		//jadi silahkan ppilih mau yg mana sama saja
 		//bye
 		return $this->db->query("SELECT * FROM gejala JOIN kelompok_gejala on kelompok_gejala.id = gejala.kelompok_gejala_id")->result();
-		
+
 		//jadi ini query bawaan CI
 		// return $this->db->select('*')
 		// 		 ->from('gejala')
@@ -18,19 +18,19 @@ class Gejala_model extends CI_Model {
 		// 		 ->get()
 		// 		 ->result();
 	}
-	
+
 	public function insert(){
 		$kelompok_gejala_id = $this->input->post('kelompok_gejala_id');
 		$kode = $this->input->post('kode');
 		$nama_gejala = $this->input->post('nama_gejala');
-	
+
 	$data = array(
 					'kelompok_gejala_id'=>$kelompok_gejala_id,
 					'kode'=>$kode,
 					'nama_gejala'=>$nama_gejala,
 			);
 	$this->db->insert('gejala', $data);
-	
+
 	}
 
 	public function getById($id){
@@ -62,4 +62,16 @@ class Gejala_model extends CI_Model {
 	{
 		return $this->db->get('kelompok_gejala');
 	}
+
+	function get_list_by_id($id){
+         $sql = "select id,kode,nama_gejala from gejala where id in (".$id.")";
+         return $this->db->query($sql);
+     }
+
+     function get_by_kelompok($kelompok){
+        $this->db->select('*');
+        $this->db->from('gejala');
+         $this->db->where('kelompok_gejala_id',$kelompok);
+        return $this->db->get();
+    }
 }

@@ -6,17 +6,17 @@ class Kelompok_model extends CI_Model {
 	public function daftarGejala(){
 		return $this->db->get('kelompok_gejala')->result();
 	}
-	
+
 	public function insert(){
 		$nama = $this->input->post('nama');
 		$keterangan = $this->input->post('keterangan');
-	
-	$data = array(
-					'nama'=>$nama,
-					'keterangan'=>$keterangan,
-			);
-	$this->db->insert('kelompok_gejala', $data);
-	
+
+		$data = array(
+						'nama'=>$nama,
+						'keterangan'=>$keterangan,
+				);
+		$this->db->insert('kelompok_gejala', $data);
+
 	}
 
 	public function getById($id){
@@ -41,4 +41,10 @@ class Kelompok_model extends CI_Model {
 		$this->db->where('id', $id);
 		$this->db->delete('kelompok_gejala');
 	}
+
+	function get_list_data(){
+        $this->db->select('*');
+        $this->db->from('kelompok_gejala');
+        return $this->db->get();
+    }
 }

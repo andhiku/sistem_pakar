@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model(array('Kelompok_model', 'Nilaicf_model', 'Gejala_model'));
+		$this->load->model(array('Kelompok_model', 'Nilaicf_model', 'Gejala_model', 'History_model'));
 		// if($this->session->userdata('is_login') == FALSE){redirect('login_user');}
 	}
 
@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 
 	public function diagnosa()
 	{
+		$user_login = $this->session->userdata('user_id');
 		if($this->session->userdata('is_login') == FALSE){redirect('login_user');}
 
 		if (!$this->input->post('gejala')) {
@@ -56,11 +57,25 @@ class Welcome extends CI_Controller {
 					$penyakit[$i]=array('kode'=>$value->kode,
 										'nama'=>$value->nama,
 										'kepercayaan'=>$combineCF*100,
-										'keterangan'=>$value->keterangan);
-					$this->db->insert('hasil_diagnosa', $penyakit[$i]);
+										'keterangan'=>$value->keterangan,
+										'user_id' =>$user_login);
+					// $this->db->insert('hasil_diagnosa', $penyakit[$i]);
 					$i++;
 				}
+
+				
+				
 			}
+
+			//insert ke tabel history
+			$insert_data = array();
+			foreach ($this->input->post("gejala") as $g) {
+				$insert_data[] = array(
+								'user_id' => $user_login,
+								'gejala_id' => $g
+							);
+			}
+			$this->db->insert_batch('history', $insert_data);
 
 			function cmp($a, $b)
 			{
@@ -68,6 +83,15 @@ class Welcome extends CI_Controller {
 			}
 			usort($penyakit, "cmp");
 			$data["listPenyakit"] = $penyakit;
+			$data_hasil = array(
+				'kode' =>$penyakit[0]['kode'],
+				'nama' =>$penyakit[0]['nama'],
+				'kepercayaan' =>$penyakit[0]['kepercayaan'],
+				'keterangan' =>$penyakit[0]['keterangan'],
+				'user_id' =>$penyakit[0]['user_id'],
+			);
+					$this->db->insert('hasil_diagnosa', $data_hasil);
+
 			$this->load->view('templates/user/diagnosa/index', $data);
 		}
 	}
@@ -79,6 +103,15 @@ class Welcome extends CI_Controller {
 		}
 		$data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
 		$this->load->view('templates/admin/index', $data);
+	}
+
+	public function riwayat(){
+		$id = $this->session->userdata('user_id');
+		
+
+		$data['listHistory'] = $this->History_model->listHistory($id);
+		$data['listHasil'] = $this->History_model->listHasil($id);
+		$this->load->view('user/riwayat', $data);
 	}
 
 }

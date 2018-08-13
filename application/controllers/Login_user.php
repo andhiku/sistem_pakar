@@ -26,6 +26,7 @@ class Login_user extends CI_Controller {
 				redirect('login_user');
 			}else{
 				$data = array(
+						'user_id' => $check->id,
 						'username' => $username,
 						'password' => $password,
 						'is_login' => TRUE,

@@ -57,6 +57,7 @@ class Welcome extends CI_Controller {
 										'nama'=>$value->nama,
 										'kepercayaan'=>$combineCF*100,
 										'keterangan'=>$value->keterangan);
+					$this->db->insert('hasil_diagnosa', $penyakit[$i]);
 					$i++;
 				}
 			}

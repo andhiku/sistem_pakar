@@ -1,14 +1,15 @@
-<div class="content" style="padding:10px 40px;">
-    <h3>Hasil Analisis</h3>
+<section id="kontak" class="call-to-action-area section-gap " style="background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #ffffff 100%) !important; padding:60px 120px;" >
+<!-- <div class="content" style="padding:10px 40px;"> -->
+    <h2>Hasil Analisis</h2>
     <div class="box box-warning">
         <div class="box-header with-border">
             <h6 class="box-title">Gejala yang dipilih</h6>
         </div><!-- /.box-header -->
             <div class="box-body table-responsive">
-            <table id="tbl-list" class="table table-bordered table-striped">
+            <table id="tbl-list" class="table table-bordered">
                 <tr>
-                    <th width="50px">No</th>
-                    <th>Gejala</th>
+                    <th width="50px" style="background: #67CDFF; color: white">No</th>
+                    <th style="background: #67CDFF; color: white">Gejala</th>
                 </tr>
                 <tr>
                     <?php $i = 1; foreach($listGejala->result() as $value){?>
@@ -26,11 +27,11 @@
             <h6 class="box-title">Hasil Diagnosa</h6>
         </div><!-- /.box-header -->
         <div class="box-body">
-            <table id="tbl-list" class="table table-bordered table-striped">
+            <table id="tbl-list" class="table table-bordered">
                 <tr>
-                    <th width="50px">No</th>
-                    <th>Penyakit</th>
-                    <th>Tingkat Kepercayaan</th>
+                    <th width="50px" style="background: #67CDFF; color: white">No</th>
+                    <th style="background: #67CDFF; color: white">Penyakit</th>
+                    <th style="background: #67CDFF; color: white">Tingkat Kepercayaan</th>
                 </tr>
                 <tr>
                     <?php $i = 1; foreach($listPenyakit as $value){?>
@@ -62,7 +63,8 @@
             <?php }?>
         </div><!--box body-->
         <div class="box-footer clearfix">
-            <a class="btn btn-sm btn-primary btn-flat pull-right" href="<?php echo base_url()?>welcome/diagnosa">Deteksi Ulang</a>
+            <a class="btn btn-sm btn-flat pull-right" style="background: #67CDFF; color: white" href="<?php echo site_url()?>/welcome/diagnosa">Deteksi Ulang</a>
         </div>
     </div><!--box-->
 </div>
+</section>

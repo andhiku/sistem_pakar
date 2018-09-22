@@ -7,11 +7,23 @@ class Nilai_CF extends CI_Controller {
 		parent::__construct();
 		$this->load->model('Nilaicf_model'); //load model nilaicf
 	}
-	
+
 	public function index()
 	{
-		$data['content'] = 'admin/nilai_cf/list'; 
-		$data['kelompok_data'] = $this->Nilaicf_model->daftarNilaicf();
+		$q = null;
+
+        $start = intval($this->input->get('start'));
+		$config['base_url'] = base_url() . 'index.php/nilai_cf';
+		$config['first_url'] = base_url() . 'index.php/nilai_cf';
+        $config['per_page'] = 10;
+		$config['page_query_string'] = TRUE;
+        $config['total_rows'] = $this->Nilaicf_model->total_rows($q);
+        $this->pagination->initialize($config);
+
+		$data['content'] = 'admin/nilai_cf/list';
+		$data['pagination'] = $this->pagination->create_links();
+		$data['start'] = $start;
+		$data['kelompok_data'] = $this->Nilaicf_model->daftarNilaicf($config['per_page'], $start, $q);
 		$this->load->view('templates/admin/index', $data);
 	}
 
@@ -22,8 +34,8 @@ class Nilai_CF extends CI_Controller {
 			$this->Nilaicf_model->insert();
 			redirect('nilai_cf/index');
 		}
-		
-		$data['content'] = 'admin/nilai_cf/create'; 
+
+		$data['content'] = 'admin/nilai_cf/create';
 		$this->load->view('templates/admin/index', $data);
 
 
@@ -37,7 +49,7 @@ class Nilai_CF extends CI_Controller {
 
 		$id=$this->uri->segment(3);
 		$data['nilaicf'] = $this->Nilaicf_model->getById($id);
-		$data['content'] = 'admin/nilai_cf/edit'; 
+		$data['content'] = 'admin/nilai_cf/edit';
 		$this->load->view('templates/admin/index', $data);
 	}
 

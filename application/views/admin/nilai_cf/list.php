@@ -18,9 +18,9 @@
 					</tr>
 				</thead>
 				<tbody>
-					<?php $no= 1; foreach ($kelompok_data as $data): ?>	
+					<?php $no= 1; foreach ($kelompok_data as $data): ?>
 					<tr>
-						<td><?php echo $no++ ?></td>
+						<td><?php echo ++$start ?></td>
 						<td><?php echo $data['nama_gejala'] ?></td>
 						<td><?php echo $data['nama'] ?></td>
 						<td><?php echo $data['mb'] ?></td>
@@ -33,6 +33,9 @@
 					<?php endforeach ?>
 				</tbody>
 			</table>
+		</div>
+		<div id="pagination">
+			<?php echo $pagination ?>
 		</div>
 	</div>
 </div>

@@ -21,12 +21,12 @@
 						<?php $no= 1; foreach ($kelompok_data as $data): ?>	
 						<tr>
 							<td><?php echo $no++ ?></td>
-							<td><?php echo $data->nama ?></td>
-							<td><?php echo $data->kode ?></td>
-							<td><?php echo $data->nama_gejala ?></td>
+							<td><?php echo $data['nama'] ?></td>
+							<td><?php echo $data['kode'] ?></td>
+							<td><?php echo $data['nama_gejala'] ?></td>
 							<td style="text-align: center; width: 200px;">
-								<a href="<?php echo site_url('/gejala/edit/').$data->id ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background:#51677B; border-color:#51677B;"><i class="fa fa-edit"></i>  Edit</a>
-								<a href="<?php echo site_url('/gejala/hapus/').$data->id ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i>  Hapus</a>
+								<a href="<?php echo site_url('/gejala/edit/').$data['gid'] ?>" class="btn btn-primary btn-sm" style="border-radius: 0px; background:#51677B; border-color:#51677B;"><i class="fa fa-edit"></i>  Edit</a>
+								<a href="<?php echo site_url('/gejala/hapus/').$data['gid'] ?>" class="btn btn-danger btn-sm" style="border-radius: 0px;" onclick="javasciprt: return confirm('Apakah anda yakin ?')"><i class="fa fa-trash"></i>  Hapus</a>
 							</td>
 						</tr>
 						<?php endforeach ?>

@@ -1,4 +1,4 @@
-<div class="row">
+ <div class="row">
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel tile fixed_height_350">
 			<div class="x_title">
@@ -45,7 +45,7 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Keterangan : </span>
+											<span>Nama Gejala : </span>
 										</div>
 										<div class="col-md-12">
 											<input type="text" name="nama_gejala" class="form-control" style="font-size: 12px;" value="<?php echo $gejala['nama_gejala'] ?>">

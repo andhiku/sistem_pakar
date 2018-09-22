@@ -22,15 +22,21 @@
               <div class="menu_section">
                 <ul class="nav side-menu">
                   <li><a href="<?php echo site_url() ?>/welcome" style="color: #2F4356"><i class="fa fa-laptop"></i> Halaman Depan </a></li>
+
                   <li><a href="<?php echo site_url() ?>/welcome/dashboard" style="color: #2F4356"><i class="fa fa-dashboard"></i> Dashboard </a></li>
+
                   <li><a href="<?php echo site_url() ?>/penyakit" style="color: #2F4356"><i class="fa fa-medkit"></i> Data Penyakit </a></li>
-                  <li><a style="color: #2F4356"><i class="fa fa-clipboard"></i> Data Gejala <span class="fa fa-chevron-down" style="color: #2F4356"></span></a>
+
+                  <li><a style="color: #2F4356"><i class="fa fa-list"></i> Data Gejala <span class="fa fa-chevron-down" style="color: #2F4356"></span></a>
                     <ul class="nav child_menu">
                       <li><a href="<?php echo site_url() ?>/kelompok_gejala" style="color: #2F4356">Kelompok Gejala</a></li>
                       <li><a href="<?php echo site_url() ?>/gejala" style="color: #2F4356">Gejala</a></li>
                       <li><a href="<?php echo site_url() ?>/nilai_cf" style="color: #2F4356">Nilai CF</a></li>
                     </ul>
                   </li>
+
+                  <li><a href="<?php echo site_url() ?>/riwayat" style="color: #2F4356"><i class="fa fa-clipboard"></i> Riwayat Diagnosa </a></li>
+
                   <li><a style="color: #2F4356"><i class="fa fa-cogs"></i> Pengaturan <span class="fa fa-chevron-down" style="color: #2F4356"></span></a>
                     <ul class="nav child_menu">
                       <li ><a href="<?php echo site_url() ?>/pengguna" style="color: #2F4356">Pengguna</a></li>

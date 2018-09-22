@@ -15,7 +15,7 @@
 										<input type="hidden" name="id" value="<?php echo $nilaicf['id'] ?>">
 										<div class="col-md-12" style="margin-bottom: 5px;">
 											<!-- <span >Gejala : </span> -->
-											<select name=gejala class="form-control " style="font-size: 12px;">
+											<select name="gejala" class="form-control " style="font-size: 12px;">
 												<!-- <option>-Pilih-</option> -->
 												<?php $gejala = $this->Nilaicf_model->getlistnilaicf();
 

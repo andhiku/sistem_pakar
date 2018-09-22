@@ -81,4 +81,12 @@ class Nilaicf_model extends CI_Model {
         $sql=$sql." order by gejala_id";
          return $this->db->query($sql);
      }
+
+     function getgejala(){
+     	return $this->db->get('gejala');
+     }
+
+     function getpenyakit(){
+     	return $this->db->get('penyakit');
+     }
 }

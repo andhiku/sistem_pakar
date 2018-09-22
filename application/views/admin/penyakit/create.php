@@ -31,10 +31,11 @@
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
-											<span>Keterangan : </span>
+											<span>Penanganan Awal/Pencegahan : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="keterangan" class="form-control" style="font-size: 12px;">
+											<textarea name="keterangan" class="form-control" style="font-size: 12px;">
+											</textarea>
 										</div>
 									</div>
 									<br>

@@ -12,7 +12,7 @@
 						<th>NO</th>
 						<th>Kode Penyakit</th>
 						<th>Nama Penyakit</th>
-						<th>Saran</th>
+						<th>Penanganan Awal/Pencegahan</th>
 						<th>Aksi</th>
 					</tr>
 				</thead>

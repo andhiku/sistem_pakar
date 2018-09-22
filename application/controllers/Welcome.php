@@ -22,6 +22,12 @@ class Welcome extends CI_Controller {
 		$this->load->view('templates/user/home/index', $data);
 	}
 
+	public function afterlogin()
+	{
+		$data['contentuser'] = 'user/home'; //nama file yang akan jadi kontent di template
+		$this->load->view('templates/user/diagnosa/index', $data);
+	}
+
 	public function diagnosa()
 	{
 		$user_login = $this->session->userdata('user_id');
@@ -111,7 +117,10 @@ class Welcome extends CI_Controller {
 
 		$data['listHistory'] = $this->History_model->listHistory($id);
 		$data['listHasil'] = $this->History_model->listHasil($id);
-		$this->load->view('user/riwayat', $data);
+		// $this->load->view('user/riwayat');
+		$data['contentuser'] = 'user/riwayat'; 
+		$this->load->view('templates/user/diagnosa/index', $data);
+
 	}
 
 }

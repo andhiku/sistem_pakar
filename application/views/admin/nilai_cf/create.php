@@ -15,19 +15,37 @@
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Gejala : </span>
 										</div>
-										<div class="col-md-12">
+										<!-- <div class="col-md-12">
 											<input type="text" name="gejala_id" class="form-control " style="font-size: 12px;">
-										</div>
+										</div> -->
 									</div>
+										<select name="gejala_id" class="form-control " style="font-size: 12px;">
+											<option>-Pilih-</option>
+											<?php $kelompok_gejala = $this->Nilaicf_model->getgejala();
+											?>
+											<?php foreach ($kelompok_gejala->result() as $key){ ?>
+												<option value="<?php echo $key->id ?>"><?php echo $key->nama_gejala; ?></option>
+											<?php } ?> 
+										
+										</select>
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">
 											<span>Nama Penyakit : </span>
 										</div>
-										<div class="col-md-12">
+										<!-- <div class="col-md-12">
 											<input type="text" name="penyakit_id" class="form-control" style="font-size: 12px;">
-										</div>
+										</div> -->
 									</div>
+									<select name="penyakit_id" class="form-control " style="font-size: 12px;">
+											<option>-Pilih-</option>
+											<?php $kelompok_gejala = $this->Nilaicf_model->getpenyakit();
+											?>
+											<?php foreach ($kelompok_gejala->result() as $key){ ?>
+												<option value="<?php echo $key->id ?>"><?php echo $key->nama; ?></option>
+											<?php } ?> 
+										
+										</select>
 									<br>
 									<div class="row">
 										<div class="col-md-2" style="margin-bottom: 5px;">

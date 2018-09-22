@@ -9,14 +9,14 @@ class Gejala_model extends CI_Model {
 		//ini menggunakan query standar
 		//jadi silahkan ppilih mau yg mana sama saja
 		//bye
-		return $this->db->query("SELECT * FROM gejala JOIN kelompok_gejala on kelompok_gejala.id = gejala.kelompok_gejala_id")->result();
+		// return $this->db->query("SELECT *, gejala.id AS gid FROM gejala JOIN kelompok_gejala on kelompok_gejala.id = gejala.kelompok_gejala_id")->result();
 
 		//jadi ini query bawaan CI
-		// return $this->db->select('*')
-		// 		 ->from('gejala')
-		// 		 ->join('kelompok_gejala','kelompok_gejala.id = gejala.kelompok_gejala_id')
-		// 		 ->get()
-		// 		 ->result();
+		return $this->db->select('*, gejala.id AS gid')
+				 ->from('gejala')
+				 ->join('kelompok_gejala','kelompok_gejala.id = gejala.kelompok_gejala_id')
+				 ->get()
+				 ->result_array();
 	}
 
 	public function insert(){

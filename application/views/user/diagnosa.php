@@ -11,7 +11,7 @@
 			</div>
 		</div>
 		<div class="row d-flex justify-content-center">
-			<div class="col-md-6 col-md-offset-2" >
+			<div class="col-md-12 col-md-offset-2" >
 				<?php foreach($listKelompok->result() as $value){?>
 				<span style="font-weight: bold;" ><?php echo $value->nama?></span><br>
 					<?php
@@ -26,7 +26,7 @@
 		</div>
 		<br>
 		<div class="row d-flex justify-content-center">
-			<div class="col-md-6" style="float: left; padding: 0;">
+			<div class="col-md-12" style="float: left; padding: 0;">
 				<button type="submit" name="submit" class="btn main-btn" style="background-color: #41C1FF;  border-radius: 0px;">Proses</button>
 			</div>
 		</div>

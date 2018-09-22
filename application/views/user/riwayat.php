@@ -1,7 +1,7 @@
 <section id="kontak" class="call-to-action-area section-gap " style="background-image: -webkit-linear-gradient(0deg, #ffffff 0%, #ffffff 100%) !important; padding:60px 120px;" >
     <h3>Riwayat Diagnosa</h3>
     <h4>Riwayat Penyakit (<strong><?php echo $this->session->userdata('nama')?></strong>)</h4>
-    <table class='table table-bordered'>
+    <table class='table table-bordered'> 
         <thead>
             <tr>
                 <th style="background: #67CDFF; color: white; padding: 5px">Nama Gejala</th>

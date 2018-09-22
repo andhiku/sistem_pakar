@@ -16,7 +16,7 @@ class Nilaicf_model extends CI_Model {
 						->result_array();
 	}
 
-	public function insert(){
+	public function insert(){ 
 		$gejala_id = $this->input->post('gejala_id');
 		$penyakit_id = $this->input->post('penyakit_id');
 		$md = $this->input->post('md');

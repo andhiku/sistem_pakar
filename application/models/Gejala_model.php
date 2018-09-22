@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Gejala_model extends CI_Model {
 
-	public function gejala(){
+	public function gejala($limit, $start = 0, $q = null){
 		// return $this->db->get('gejala')->result();
 
 		//ini menggunakan query standar
@@ -15,9 +15,15 @@ class Gejala_model extends CI_Model {
 		return $this->db->select('*, gejala.id AS gid')
 				 ->from('gejala')
 				 ->join('kelompok_gejala','kelompok_gejala.id = gejala.kelompok_gejala_id')
+                 ->limit($limit, $start)
 				 ->get()
 				 ->result_array();
 	}
+
+	function total_rows($q = NULL) {
+        $this->db->from('gejala');
+        return $this->db->count_all_results();
+    }
 
 	public function insert(){
 		$kelompok_gejala_id = $this->input->post('kelompok_gejala_id');

@@ -10,9 +10,24 @@ class Gejala extends CI_Controller {
 	
 	public function index()
 	{
-		$data['content'] = 'admin/gejala/list'; 
-		$data['kelompok_data'] = $this->Gejala_model->gejala();
+		$q = null;
+
+        $start = intval($this->input->get('start'));
+		$config['base_url'] = base_url() . 'index.php/gejala';
+		$config['first_url'] = base_url() . 'index.php/gejala';
+        $config['per_page'] = 10;
+		$config['page_query_string'] = TRUE;
+        $config['total_rows'] = $this->Gejala_model->total_rows($q);
+        $this->pagination->initialize($config);
+
+		$data['content'] = 'admin/gejala/list';
+		$data['pagination'] = $this->pagination->create_links();
+		$data['start'] = $start;
+		$data['kelompok_data'] = $this->Gejala_model->gejala($config['per_page'], $start, $q);
 		$this->load->view('templates/admin/index', $data);
+		// $data['content'] = 'admin/gejala/list'; 
+		// $data['kelompok_data'] = $this->Gejala_model->gejala();
+		// $this->load->view('templates/admin/index', $data);
 	}
 
 	public function create()

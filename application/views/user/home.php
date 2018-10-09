@@ -94,7 +94,7 @@
 							<div class="col-lg-6  col-md-6 mb-30">
 								<div class="single-service" style="background-color: white;">
 									<img class="d-block mx-auto mb-30" src="<?php echo base_url() ?>assets/templateuser/img/f1.png" alt="">
-									<h4><a href="#">Kehamilan Ektropik Terganggu (KET)</a></h4>								
+									<h4><a href="#">Kehamilan Ektropik</a></h4>								
 								</div>
 							</div>
 							<div class="col-lg-6  col-md-6 mb-30">

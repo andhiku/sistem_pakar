@@ -7,6 +7,10 @@ class Riwayat_model extends CI_Model {
 		return $this->db->get('history')->result();
 	}
 
+	public function jumlah(){
+		return $this->db->get('hasil_diagnosa');
+	}
+
 	public function daftarHasil(){
 		return $this->db->get('hasil_diagnosa')->result();
 	}

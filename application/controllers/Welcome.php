@@ -6,7 +6,7 @@ class Welcome extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model(array('Kelompok_model', 'Nilaicf_model', 'Gejala_model', 'History_model'));
+		$this->load->model(array('Kelompok_model', 'Nilaicf_model', 'Gejala_model', 'History_model', 'Riwayat_model'));
 		// if($this->session->userdata('is_login') == FALSE){redirect('login_user');}
 	}
 
@@ -48,21 +48,26 @@ class Welcome extends CI_Controller {
 			$i=0;
 			foreach($listPenyakit->result() as $value){
 				$listGejala = $this->Nilaicf_model->get_gejala_by_penyakit($value->penyakit_id,$gejala);
-				$combineCF=0;
+				$combineCFmb=0;
+				$combineCFmd=0;
 				$CFBefore=0;
 				$j=0;
 				foreach($listGejala->result() as $value2){
 					$j++;
-					if($j==1)
-						$combineCF=$value2->mb;
+					if($j==3){
+						$combineCFmb=$value2->mb;
+						$combineCFmd=$value2->md;}
 					else
-					$combineCF =$combineCF + ($value2->mb * (1 - $combineCF));
+					$combineCFmb =$combineCFmb + ($value2->mb * (1 - $combineCFmb));
+					$combineCFmd =$combineCFmd + ($value2->md * (1 - $combineCFmd));
+
+					$combinehasil = $combineCFmb-$combineCFmd; 
 				}
-				if($combineCF>=0.5)
+				if($combinehasil>=0.5)
 				{
 					$penyakit[$i]=array('kode'=>$value->kode,
 										'nama'=>$value->nama,
-										'kepercayaan'=>$combineCF*100,
+										'kepercayaan'=>$combinehasil*100,
 										'keterangan'=>$value->keterangan,
 										'user_id' =>$user_login);
 					// $this->db->insert('hasil_diagnosa', $penyakit[$i]);
@@ -107,7 +112,13 @@ class Welcome extends CI_Controller {
 		if($this->session->userdata('is_login') == FALSE || $this->session->userdata('level') != 'admin'){
 			redirect('welcome/admin');
 		}
-		$data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
+		// $data['jumlah_users'] = $this->Pengguna_model->jumlah()->result();
+		// $data['jumlah_kelompok_gejala'] = $this->Kelompok_model->jumlah()->result();
+		// $data['jumlah_gejala'] = $this->Gejala_model->jumlah()->result();
+		// $data['jumlah_penyakit'] = $this->Penyakit_model->jumlah()->result();
+		// $data['jumlah_nilai_cf'] = $this->Nilaicf_model->jumlah()->result();
+		$data['jumlah_hasil'] = $this->Riwayat_model->jumlah();
+		$data['content'] = 'admin/dashboard';  //nama file yang akan jadi kontent di template
 		$this->load->view('templates/admin/index', $data);
 	}
 

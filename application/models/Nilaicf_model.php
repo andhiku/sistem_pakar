@@ -76,7 +76,7 @@ class Nilaicf_model extends CI_Model {
      }
 
      function get_gejala_by_penyakit($id,$gejala=null){
-         $sql = "select distinct gejala_id,mb,md from gejala_penyakit where penyakit_id=".$id;
+         $sql = "select gejala_penyakit.gejala_id,mb,md from gejala_penyakit where penyakit_id=".$id;
          if($gejala!=null)
             $sql=$sql." and gejala_id in (".$gejala.")";
         $sql=$sql." order by gejala_id";

@@ -53,7 +53,7 @@
         <div class="box-body">
             <?php if(sizeof($listPenyakit)>0) { ?>
                 <p>
-                    Berdasarkan gejalanya, unggas tersebut di prediksi mengidap penyakit <b><?php echo $listPenyakit[0]['nama'];?></b> dengan tingkat kepercayaan <b><?php echo $listPenyakit[0]['kepercayaan'];?> %</b><br/>
+                    Berdasarkan gejalanya, Ibu di prediksi mengidap penyakit <b><?php echo $listPenyakit[0]['nama'];?></b> dengan tingkat kepercayaan <b><?php echo $listPenyakit[0]['kepercayaan'];?> %</b><br/>
                     <?php echo $listPenyakit[0]['keterangan'];?>
                 </p>
             <?php }else{?>

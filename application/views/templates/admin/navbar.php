@@ -6,7 +6,7 @@
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="<?php echo base_url() ?>assets/production/images/imglagi.jpg" alt="..." class="img-circle profile_img">
+                <img src="<?php echo base_url() ?>assets/production/images/logo.png" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
                 <span style="color: #4B6277">SISTEM PAKAR</span>
@@ -35,7 +35,7 @@
                     </ul>
                   </li>
 
-                  <li><a href="<?php echo site_url() ?>/riwayat" style="color: #2F4356"><i class="fa fa-clipboard"></i> Riwayat Diagnosa </a></li>
+                 <!--  <li><a href="<?php echo site_url() ?>/riwayat" style="color: #2F4356"><i class="fa fa-clipboard"></i> Riwayat Diagnosa </a></li> -->
 
                   <li><a style="color: #2F4356"><i class="fa fa-cogs"></i> Pengaturan <span class="fa fa-chevron-down" style="color: #2F4356"></span></a>
                     <ul class="nav child_menu">

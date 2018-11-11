@@ -16,7 +16,7 @@
 											<span>Kelompok Gejala : </span>
 										</div>
 										<div class="col-md-12">
-											<select name="kelompok_gejala_id" class="form-control " style="font-size: 12px;">
+											<select name="kelompok_gejala_id" class="form-control " style="font-size: 12px;" required="required">
 												<option>-Pilih-</option>
 												<?php $kelompok_gejala = $this->Gejala_model->getlistkelompokgejala();
 
@@ -35,7 +35,7 @@
 											<span>Kode Gejala : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="kode" class="form-control" style="font-size: 12px;">
+											<input type="text" name="kode" class="form-control" style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>
@@ -44,7 +44,7 @@
 											<span>Nama Gejala : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama_gejala" class="form-control" style="font-size: 12px;">
+											<input type="text" name="nama_gejala" class="form-control" style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>

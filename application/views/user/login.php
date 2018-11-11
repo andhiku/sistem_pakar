@@ -24,7 +24,7 @@
 					<button type="submit" name="submit" class="btn main-btn" style="background-color: #41C1FF;  border-radius: 0px;">Masuk</button>
 				</div>
 				<div class="col-md-6" style="float: left; padding: 0;">
-					<a href="" style="font-size: 14px;">Lupa kata sandi?</a><br>
+					<!-- <a href="" style="font-size: 14px;">Lupa kata sandi?</a><br> -->
 					<span style="font-size: 14px;">Belum punya akun?</span><a href="<?php echo site_url() ?>/regist_user" style="font-size: 14px;">  Daftar sekarang</a>
 				</div>
 			</div>

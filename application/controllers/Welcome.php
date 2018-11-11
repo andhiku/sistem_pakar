@@ -13,7 +13,8 @@ class Welcome extends CI_Controller {
 	public function admin()
 	{
 		// $data['content'] = 'admin/dashboard'; //nama file yang akan jadi kontent di template
-		$this->load->view('templates/login/index');
+
+		$this->load->view('templates/login/index'); 
 	}
 
 	public function index()
@@ -63,7 +64,7 @@ class Welcome extends CI_Controller {
 
 					$combinehasil = $combineCFmb-$combineCFmd; 
 				}
-				if($combinehasil>=0.5)
+				if($combinehasil)
 				{
 					$penyakit[$i]=array('kode'=>$value->kode,
 										'nama'=>$value->nama,
@@ -101,7 +102,7 @@ class Welcome extends CI_Controller {
 				'keterangan' =>$penyakit[0]['keterangan'],
 				'user_id' =>$penyakit[0]['user_id'],
 			);
-					$this->db->insert('hasil_diagnosa', $data_hasil);
+			$this->db->insert('hasil_diagnosa', $data_hasil);
 
 			$this->load->view('templates/user/diagnosa/index', $data);
 		}
@@ -112,13 +113,23 @@ class Welcome extends CI_Controller {
 		if($this->session->userdata('is_login') == FALSE || $this->session->userdata('level') != 'admin'){
 			redirect('welcome/admin');
 		}
-		// $data['jumlah_users'] = $this->Pengguna_model->jumlah()->result();
-		// $data['jumlah_kelompok_gejala'] = $this->Kelompok_model->jumlah()->result();
-		// $data['jumlah_gejala'] = $this->Gejala_model->jumlah()->result();
-		// $data['jumlah_penyakit'] = $this->Penyakit_model->jumlah()->result();
-		// $data['jumlah_nilai_cf'] = $this->Nilaicf_model->jumlah()->result();
-		$data['jumlah_hasil'] = $this->Riwayat_model->jumlah();
-		$data['content'] = 'admin/dashboard';  //nama file yang akan jadi kontent di template
+
+		$data = array(
+					'jumlah_users' => $this->db->get('user')->result(),
+					'jumlah_kelompok_gejala' => $this->db->get('kelompok_gejala')->result(),
+					'jumlah_gejala' => $this->db->get('gejala')->result(),
+					'jumlah_penyakit' => $this->db->get('penyakit')->result(),
+
+					'content' => 'admin/dashboard',  //nama file yang akan jadi kontent di template
+		);
+		// $data['jumlah_users'] = $this->db->get('admin')->result();
+		// $data['jumlah_kelompok_gejala'] = $this->db->get('kelompok_gejala')->result();
+		// $data['jumlah_gejala'] = $this->db->get('gejala')result();
+		// $data['jumlah_penyakit'] = $this->db->get('penyakit')->result();
+		// // $data['jumlah_nilai_cf'] = $this->db->get('gejala_penyakit')->result();
+		// // $data['jumlah_hasil'] = $this->Riwayat_model->jumlah();
+
+		// $data['content'] = 'admin/dashboard';  //nama file yang akan jadi kontent di template
 		$this->load->view('templates/admin/index', $data);
 	}
 

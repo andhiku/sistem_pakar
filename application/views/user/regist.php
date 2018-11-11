@@ -25,7 +25,10 @@
 
 				<label for="password">Password</label>
 				<input type="password" name="password" class="form-control" style="border:1px solid #10161A;  border-radius: 0px;" placeholder="Masukkan Password" required="required"><br>
-
+				
+				<!-- <label for="password">Password</label>
+				<input type="password" name="password" class="form-control" style="border:1px solid #10161A;  border-radius: 0px;" placeholder="Masukkan Password" required="required"><br>
+ -->
 				<div class="col-md-6" style="float: left; padding: 0;">
 					<button type="submit" name="submit" class="btn main-btn" style="background-color: #41C1FF;  border-radius: 0px;">Daftar</button>
 				</div>

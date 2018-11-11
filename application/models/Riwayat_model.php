@@ -5,6 +5,14 @@ class Riwayat_model extends CI_Model {
 
 	public function daftarRiwayat(){
 		return $this->db->get('history')->result();
+		// return $this->db->select('*, gejala_penyakit.id AS gpid ')
+		// 				->from('gejala_penyakit')
+		// 				->join('gejala', 'gejala.id = gejala_penyakit.gejala_id ')
+		// 				->join('penyakit', 'penyakit.id = gejala_penyakit.penyakit_id ')
+  //                       ->limit($limit, $start)
+		// 				->get()
+		// 				->result_array();
+		// }
 	}
 
 	public function jumlah(){

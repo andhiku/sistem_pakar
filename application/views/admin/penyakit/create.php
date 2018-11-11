@@ -16,7 +16,7 @@
 											<span>Kode Penyakit : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="kode" class="form-control " style="font-size: 12px;">
+											<input type="text" name="kode" class="form-control " style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>
@@ -25,7 +25,7 @@
 											<span>Nama Penyakit : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="nama" class="form-control" style="font-size: 12px;">
+											<input type="text" name="nama" class="form-control" style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>
@@ -34,7 +34,7 @@
 											<span>Penanganan Awal/Pencegahan : </span>
 										</div>
 										<div class="col-md-12">
-											<textarea name="keterangan" class="form-control" style="font-size: 12px;">
+											<textarea name="keterangan" class="form-control" style="font-size: 12px;" required="required">
 											</textarea>
 										</div>
 									</div>

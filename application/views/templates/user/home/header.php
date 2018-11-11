@@ -28,6 +28,8 @@
 			<link rel="stylesheet" href="<?php echo base_url() ?>assets/templateuser/css/hexagons.min.css">			
 			<link rel="stylesheet" href="<?php echo base_url() ?>assets/templateuser/css/main.css">
 			<link type="text/css" rel="stylesheet" href="<?php echo base_url() ?>assets/templateuser/css/style.css" />
+			<script type="text/javascript" src="<?php echo base_url() ?>assets/templateuser/js/jquery-1.8.2.min.js"></script>
+		
 
 		</head>
 		<body>

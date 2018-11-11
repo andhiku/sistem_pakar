@@ -19,7 +19,7 @@
 											<input type="text" name="gejala_id" class="form-control " style="font-size: 12px;">
 										</div> -->
 									</div>
-										<select name="gejala_id" class="form-control " style="font-size: 12px;">
+										<select name="gejala_id" class="form-control " style="font-size: 12px;" required="required">
 											<option>-Pilih-</option>
 											<?php $kelompok_gejala = $this->Nilaicf_model->getgejala();
 											?>
@@ -37,7 +37,7 @@
 											<input type="text" name="penyakit_id" class="form-control" style="font-size: 12px;">
 										</div> -->
 									</div>
-									<select name="penyakit_id" class="form-control " style="font-size: 12px;">
+									<select name="penyakit_id" class="form-control " style="font-size: 12px;" required="required">
 											<option>-Pilih-</option>
 											<?php $kelompok_gejala = $this->Nilaicf_model->getpenyakit();
 											?>
@@ -52,7 +52,7 @@
 											<span>Nilai MD : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="md" class="form-control" style="font-size: 12px;">
+											<input type="text" name="md" class="form-control" style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>
@@ -61,7 +61,7 @@
 											<span>Nilai MB : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="mb" class="form-control" style="font-size: 12px;">
+											<input type="text" name="mb" class="form-control" style="font-size: 12px;" required="required">
 										</div>
 									</div>
 									<br>

@@ -17,7 +17,7 @@
 								<?php } ?>
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding banner-right">
-							<img class="img-fluid" style="width: 600px; height: 500px;" src="<?php echo base_url() ?>assets/templateuser/img/img_banner.png" alt="">
+							<img style="height: 570px; width: 700px; margin-bottom: 30px;" src="<?php echo base_url() ?>assets/templateuser/img/img_banner3.png" alt="">
 						</div>
 					</div>
 				</div>

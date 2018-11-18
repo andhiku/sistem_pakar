@@ -43,11 +43,14 @@ class Nilai_CF extends CI_Controller {
 
 	public function edit(){
 		if (isset($_POST['submit'])){
+			// print_r($_POST);exit;
 			$this->Nilaicf_model->edit();
 			redirect('nilai_cf/index');
 		}
 
 		$id=$this->uri->segment(3);
+		$data['penyakit'] = $this->db->query("SELECT * FROM penyakit order by id")->result();
+		$data['gejala'] = $this->db->query("SELECT * FROM gejala order by id")->result();
 		$data['nilaicf'] = $this->Nilaicf_model->getById($id);
 		$data['content'] = 'admin/nilai_cf/edit';
 		$this->load->view('templates/admin/index', $data);

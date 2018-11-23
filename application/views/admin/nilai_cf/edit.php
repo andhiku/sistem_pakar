@@ -12,22 +12,17 @@
 							<form action="" method="POST">
 								<div class="container">
 									<div class="row">
-										<input type="hidden" name="id" value="<?php echo $nilaicf['id'] ?>">
+										<input type="hidden" name="id" value="<?php echo $nilaicf['nid'] ?>">
 										<div class="col-md-12" style="margin-bottom: 5px;">
-											<!-- <span >Gejala : </span> -->
-											<select name="gejala" class="form-control " style="font-size: 12px;">
-												<!-- <option>-Pilih-</option> -->
-												<?php $gejala = $this->Nilaicf_model->getlistnilaicf();
-
-												?>
-												<?php foreach ($gejala->result() as $key){ ?>
-													<option value="<?php echo $key['gpid'] ?>"><?php echo $key->nama_gejala; ?></option>
-												<?php } ?> 
-											
+											<select name="gejala_id" class="form-control"  style="font-size: 12px;">
+												<?php
+													foreach ($gejala as $g) {
+														echo " <option value='$g->id'";
+														echo $nilaicf['gejala_id']==$g->id?'selected':'' ;
+														echo ">$g->nama_gejala</option>";
+													}
+												 ?>
 											</select>
-										</div>
-										<div class="col-md-12">
-											<input type="text" name="gejala_id" class="form-control " style="font-size: 12px;" value="<?php echo $nilaicf['gejala_id'] ?>" >
 										</div>
 									</div>
 									<br>
@@ -36,7 +31,16 @@
 											<span>Penyakit : </span>
 										</div>
 										<div class="col-md-12">
-											<input type="text" name="penyakit_id" class="form-control" style="font-size: 12px;" value="<?php echo $nilaicf['penyakit_id'] ?>">
+											<select name="penyakit_id" class="form-control"  style="font-size: 12px;">
+												<?php
+													foreach ($penyakit as $p) {
+														echo " <option value='$p->id'";
+														echo $nilaicf['penyakit_id']==$p->id?'selected':'' ;
+														echo ">$p->nama</option>";
+													}
+												 ?>
+											</select>
+											<!-- <input type="text" name="penyakit_id" class="form-control" style="font-size: 12px;" value="<?php echo $nilaicf['penyakit_id'] ?>"> -->
 										</div>
 									</div>
 									<br>

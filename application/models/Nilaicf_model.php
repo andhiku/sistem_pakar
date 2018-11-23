@@ -11,6 +11,7 @@ class Nilaicf_model extends CI_Model {
 						->from('gejala_penyakit')
 						->join('gejala', 'gejala.id = gejala_penyakit.gejala_id ')
 						->join('penyakit', 'penyakit.id = gejala_penyakit.penyakit_id ')
+						->order_by('gejala_penyakit.id', 'DESC')
                         ->limit($limit, $start)
 						->get()
 						->result_array();
@@ -33,7 +34,7 @@ class Nilaicf_model extends CI_Model {
 	}
 
 	public function getById($id){
-		return $query = $this->db->query("SELECT * FROM gejala_penyakit WHERE id='$id' ")->row_array();
+		return $query = $this->db->query("SELECT *, a.id as nid FROM gejala_penyakit a JOIN penyakit b ON b.id = a.penyakit_id WHERE a.id='$id' ")->row_array();
 
 	}
 

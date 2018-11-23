@@ -21,10 +21,16 @@ class Login_user extends CI_Controller {
 			$username = $this->input->post('username');
 			$password = md5($this->input->post('password'));
 
-			$check = $this->Login_model->checkLogin($username, $password);
+			$check = $this->Login_model->checkLoginPeserta($username, $password);
 			if (!$check) {
+				$this->session->set_flashdata('error', 'Username atau Password salah');
 				redirect('login_user');
 			}else{
+				if ($check->status == 0) {
+					$this->session->set_flashdata('error', 'Akun anda belum aktif, silahkan periksa email verifikasi untuk mengaktifkan');
+					redirect('login_user');
+				}
+				
 				$data = array(
 						'user_id' => $check->id,
 						'username' => $username,

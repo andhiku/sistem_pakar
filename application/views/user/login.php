@@ -14,6 +14,7 @@
 
 		<div class="row d-flex justify-content-center">
 			<div class="col-md-6 col-md-offset-2" >
+				<p><?php echo $this->session->flashdata('error') ?></p>
 				<label for="username">Username</label>
 				<input type="text" name="username" class="form-control" style="border:1px solid #10161A; border-radius: 0px;" placeholder="Masukkan username" required="required"><br>
 

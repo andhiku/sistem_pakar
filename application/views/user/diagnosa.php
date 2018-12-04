@@ -6,7 +6,7 @@
 				<div class="title text-center">
 					<h2 style="margin-bottom: 0px;">Diagnosa</h2><br>
 					<!-- <h2>Penyakit Ibu Hamil</h2> -->
-					<p>Silahkan pilih gejala yang dirasakan...</p>
+					<p>Halaman ini adalah halaman diagnosa, Silahkan bunda memilih gejala dengan cara mencentang beberapa pilihan dibawah ini sesuai dengan gejala yang anda rasakan...</p>
 				</div>
 			</div>
 		</div>

@@ -23,65 +23,6 @@
 				</div>
 			</section>
 			<!-- End banner Area -->	
-
-			<!-- Start cat Area -->
-			<!-- <section class="cat-area section-gap" id="service">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Latest News from all categories</h1>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.</p>
-							</div>
-						</div>
-					</div>							
-					<div class="row">
-						<div class="col-lg-6 ">	
-							<div class="single-cat d-flex flex-column">
-								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-magic-wand"></span></span></a>
-								<h4 class="mb-20" style="margin-top: 23px;">Maintenance</h4>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
-								</p>
-							</div>															
-						</div>
-						<div class="col-lg-6">	
-							<div class="single-cat">
-								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-rocket"></span></span></a>
-								<h4 class="mt-40 mb-20">Residental Service</h4>
-								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
-								</p>
-							</div>															
-						</div>
-					</div>
-				</div>	
-			</section> -->
-			<!-- End cat Area -->
-			
-
-			<!-- Start about Area -->
-			<!-- <section class="about-area section-gap">
-				<div class="container">
-					<div class="row justify-content-center align-items-center d-flex">
-						<div class="col-lg-6 about-left">
-							<h1>
-								We Believe that <br>
-								Interior beautifies the <br>
-								Total Architecture
-							</h1>
-							<p class="mt-20"> 
-								inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that, as women, our behavior on the job is beyond reproach. inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why it’s crucial that.
-							</p>
-							<a href="#" class="btn primary-btn text-uppercase mt-20">see details</a>
-						</div>
-						<div class="col-lg-6 about-right">
-							<img class="img-fluid" src="img/about-img.png" alt="">
-						</div>
-					</div>
-				<!-- </div>	 -->
-			</section>
-			<!-- End about Area -->
 			
 
 			<!-- Start service Area -->
@@ -164,10 +105,26 @@
 				<div class="container">
 					<div class="row justify-content-center top">
 						<div class="col-lg-12">
-							<h1 class="text-white text-center">Tentang Kami!</h1>
-							<p class="text-white text-center mt-30">
-								SP BUMIL atau Sistem Pakar Penyakit Pada Ibu Hamil adalah sebuah website konsultasi yang dibuat untuk mendiagnosa awal penyakit pada ibu hamil. <br> Website ini diharapkan dapat membantu masyarakat khusus nya ibu hamil untuk mendeteksi dini penyakit yang dialami secara mandiri berdasarkan gejala fisik yang dirasakan. Selain itu, website ini juga diharapkan mampu membantu pemerintah dalam memaksimalkan penurunan angka kematian ibu (AKI) di Indonesia.
-							</p>							
+							<h1 class="text-white text-center">Tentang Kami!</h1><br><br><br>
+							<div class="col-lg-6" style="float: left;">
+								<img src="<?php echo base_url() ?>assets/templateuser/img/bg-02.jpg">
+							</div>	
+							<div class="col-lg-6" style="float:right">
+								<p class="text-white mt-30" style="margin-top: 0" >
+									<span style="font-size: 28px; font-style: bold">Hai Bunda...</span> <br>
+									Apakah anda sedang berbahagia menanti kehadiran buah hati tercinta? sudahkah anda memeriksakan kondisi kesehatan buah hati anda secara rutin? Ingin melakukan pemeriksaan namun anda sibuk? kekurangan biaya? <span style="font-size: 20px; font-style: bold">Tenang...</span><br>  
+									SP BUMIL hadir untuk memberikan solusi bagi bunda yang ingin melakukan pemeriksaan rutin secara mandiri, gratis dan dapat dilakukan dimana saja.
+									SP BUMIL atau Sistem Pakar Penyakit Pada Ibu Hamil adalah sebuah website konsultasi yang dibuat untuk membantu para bunda mendiagnosa secara dini penyakit yang anda alami dengan mandiri berdasarkan gejala fisik yang dirasakan.
+								</p>	
+								<?php 
+								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
+								?>
+								<a href="<?php echo site_url() ?>/login_user"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<?php } else{ ?>
+								<a href="<?php echo site_url() ?>/welcome/diagnosa"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<?php } ?>	
+							</div>		
+									
 						</div>
 					</div>
 					

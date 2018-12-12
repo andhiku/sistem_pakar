@@ -11,9 +11,9 @@
 								<?php 
 								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
 								?>
-								<a href="<?php echo site_url() ?>/login_user"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<a href="<?php echo site_url() ?>/welcome/diagnosa" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
 								<?php } else{ ?>
-								<a href="<?php echo site_url() ?>/welcome/diagnosa"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<a href="<?php echo site_url() ?>/login_user" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
 								<?php } ?>
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding banner-right">
@@ -112,20 +112,22 @@
 							<div class="col-lg-6" style="float:right">
 								<p class="text-white mt-30" style="margin-top: 0" >
 									<span style="font-size: 28px; font-style: bold">Hai Bunda...</span> <br>
-									Apakah anda sedang berbahagia menanti kehadiran buah hati tercinta? sudahkah anda memeriksakan kondisi kesehatan buah hati anda secara rutin? Ingin melakukan pemeriksaan namun anda sibuk? kekurangan biaya? <span style="font-size: 20px; font-style: bold">Tenang...</span><br>  
+									Sudahkah anda memeriksakan kondisi kesehatan buah hati anda secara rutin? Jagalah kesehatan bunda, karena pertumbuhan bayi tergantung pada kesehatan masa-masa hamil anda.<br>  
 									SP BUMIL hadir untuk memberikan solusi bagi bunda yang ingin melakukan pemeriksaan rutin secara mandiri, gratis dan dapat dilakukan dimana saja.
 									SP BUMIL atau Sistem Pakar Penyakit Pada Ibu Hamil adalah sebuah website konsultasi yang dibuat untuk membantu para bunda mendiagnosa secara dini penyakit yang anda alami dengan mandiri berdasarkan gejala fisik yang dirasakan.
+									Disini anda dapat melihat informasi berbagai penyakit yang biasa dialami ibu hamil dan tentunya dapat melakukan diagnosa secara mandiri yang disertai dengan informasi pencegahan atau penanganan awal berdasarkan penyakit yang dialami.
 								</p>	
-								<?php 
-								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
-								?>
-								<a href="<?php echo site_url() ?>/login_user"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
-								<?php } else{ ?>
-								<a href="<?php echo site_url() ?>/welcome/diagnosa"" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
-								<?php } ?>	
+								
 							</div>		
 									
 						</div>
+						<?php 
+								if($this->session->userdata('is_login') == TRUE && $this->session->userdata('level') == 'pasien'){
+								?>
+								<a href="<?php echo site_url() ?>/welcome/diagnosa" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<?php } else{ ?>
+								<a href="<?php echo site_url() ?>/login_user" class="text-uppercase header-btn">Diagnosa Sekarang <i class="fa fa-arrow-right"></i></span></a>
+								<?php } ?>
 					</div>
 					
 				</div>	

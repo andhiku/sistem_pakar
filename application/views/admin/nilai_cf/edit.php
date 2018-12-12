@@ -12,6 +12,9 @@
 							<form action="" method="POST">
 								<div class="container">
 									<div class="row">
+										<div class="col-md-2" style="margin-bottom: 5px;">
+											<span>Gejala : </span>
+										</div>
 										<input type="hidden" name="id" value="<?php echo $nilaicf['nid'] ?>">
 										<div class="col-md-12" style="margin-bottom: 5px;">
 											<select name="gejala_id" class="form-control"  style="font-size: 12px;">
